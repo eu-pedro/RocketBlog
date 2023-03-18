@@ -1,27 +1,28 @@
 import { MagnifyingGlass, ArrowRight } from 'phosphor-react'
 import FeaturedImage from '../../images/featured-image.png'
+import * as Styles from './styles'
 
 export function Header() {
   return (
-    <section>
-      <header>
+    <Styles.Container>
+      <Styles.Header>
         <h1>The Blog.</h1>
         <nav>
-          <ul>
+          <Styles.ListContainer>
             <li>Home</li>
             <li>Sobre</li>
             <li>Categorias</li>
             <li>Contato</li>
-          </ul>
+          </Styles.ListContainer>
         </nav>
 
-        <form action="">
-          <input type="text" />
+        <Styles.FormContainer>
+          <Styles.Input type="text" />
           <button>
             <MagnifyingGlass size={32} />
           </button>
-        </form>
-      </header>
+        </Styles.FormContainer>
+      </Styles.Header>
 
       <main>
         <div>
@@ -45,6 +46,6 @@ export function Header() {
           <img src={FeaturedImage} alt="" />
         </div>
       </main>
-    </section>
+    </Styles.Container>
   )
 }
