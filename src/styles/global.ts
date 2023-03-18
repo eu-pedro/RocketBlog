@@ -9,7 +9,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     -webkit-font-smoothing: antialiased;
   }
-  body, input {
+  body, input, button {
     font-family: 'Poppins', sans-serif;
+    outline: 0;
   }
 `
