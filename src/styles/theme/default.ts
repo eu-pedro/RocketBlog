@@ -5,4 +5,5 @@ export const DefaultTheme = {
   white: '#f9f9f9',
   'light-purple': '#fbf6ff',
   green: '#4fff4b',
+  'dark-footer': '#051120',
 }
