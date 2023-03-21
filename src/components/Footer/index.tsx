@@ -12,15 +12,18 @@ export function Footer() {
 
       <Styles.ContainerInfoTop>
         <p>Info</p>
+        <span>•</span>
         <p>Support</p>
+        <span>•</span>
         <p>Marketing</p>
       </Styles.ContainerInfoTop>
       <Styles.ContainerInfoBottom>
         <p>Terms of Use</p>
+        <span>•</span>
         <p>Privacy Policy</p>
       </Styles.ContainerInfoBottom>
 
-      <Styles.EndText>C 2023 RocketBlog</Styles.EndText>
+      <Styles.EndText>&copy; 2023 RocketBlog</Styles.EndText>
     </Styles.Footer>
   )
 }

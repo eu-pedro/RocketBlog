@@ -35,10 +35,10 @@ export function Content() {
         <Styles.TitleHeading>
           Veja a evolução do Front-end na prática
         </Styles.TitleHeading>
-        <p>
+        <Styles.InformationText>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu
           in aliquet ut adipiscing neque.
-        </p>
+        </Styles.InformationText>
       </Styles.RightContent>
     </Styles.Hero>
   )

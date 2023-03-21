@@ -9,7 +9,10 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     -webkit-font-smoothing: antialiased;
-    background-color: #fbf6ff;
+    background-color: ${(props) => props.theme['light-purple']}
+  }
+  :focus {
+    box-shadow: 0 0 0 2px ${(props) => props.theme.green};
   }
   body, input, button {
     font-family: 'Poppins', sans-serif;

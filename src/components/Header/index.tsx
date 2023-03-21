@@ -1,22 +1,20 @@
-import { MagnifyingGlass, ArrowRight } from 'phosphor-react'
+import { MagnifyingGlass, ArrowRight, List } from 'phosphor-react'
 import FeaturedImage from '../../images/featured-image.png'
 import * as Styles from './styles'
 import Logo from '../../assets/Logo.svg'
 import { DefaultTheme } from '../../styles/theme/default'
 
-export function Header() {
+export function Header({ setMenuIsVisible }: any) {
   return (
     <Styles.Container>
       <Styles.Header>
         <img src={Logo} alt="" />
-        <nav>
-          <Styles.ListContainer>
-            <li>Home</li>
-            <li>Sobre</li>
-            <li>Categorias</li>
-            <li>Contato</li>
-          </Styles.ListContainer>
-        </nav>
+        <Styles.ListContainer>
+          <li>Home</li>
+          <li>Sobre</li>
+          <li>Categorias</li>
+          <li>Contato</li>
+        </Styles.ListContainer>
 
         <Styles.FormContainer>
           <Styles.Input type="text" placeholder="Buscar" />
@@ -24,13 +22,14 @@ export function Header() {
             <MagnifyingGlass size={32} color={'white'} />
           </Styles.Button>
         </Styles.FormContainer>
+        <List size={42} color="white" onClick={() => setMenuIsVisible(true)} />
       </Styles.Header>
 
       <Styles.MainContainer>
         <div>
           <Styles.Title>
             Veja o guia definitivo para conquistar seus objetivos como DEV em
-            2022
+            2022.
           </Styles.Title>
           <Styles.DescriptionText>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh
@@ -40,7 +39,7 @@ export function Header() {
 
           <Styles.SeeMoreText>
             Veja mais
-            <ArrowRight size={32} color={DefaultTheme.green} />
+            <ArrowRight size={32} color={DefaultTheme.green} cursor="pointer" />
           </Styles.SeeMoreText>
         </div>
 

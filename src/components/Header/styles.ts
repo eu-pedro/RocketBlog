@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { device } from '../../styles/responsive/media'
 
 export const Container = styled.section`
   display: flex;
@@ -6,7 +7,7 @@ export const Container = styled.section`
   gap: 4rem;
   border-bottom: 3px solid ${(props) => props.theme.green};
 
-  min-height: 36.6875rem;
+  min-height: auto;
   background-color: ${(props) => props.theme['purple-bg']};
 `
 export const Header = styled.header`
@@ -17,6 +18,17 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  > svg {
+    display: none;
+    @media ${device.tablet} {
+      display: block;
+    }
+  }
+
+  @media ${device.tablet} {
+    /* width: 100%; */
+  }
 `
 
 export const ListContainer = styled.nav`
@@ -28,21 +40,47 @@ export const ListContainer = styled.nav`
   > li {
     list-style: none;
     color: ${(props) => props.theme.white};
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background-color: ${(props) => props.theme.green};
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.2s ease-in;
+    }
+
+    &:hover::after {
+      width: 102%;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
   }
 
-  > li:nth-child(1) {
-    border-left: 2px solid ${(props) => props.theme.green};
-    padding-left: 3px;
+  @media ${device.tablet} {
+    display: none;
   }
 `
 
 export const FormContainer = styled.div`
-  height: 2.75rem;
-  width: 300px;
   display: flex;
   justify-content: center;
+  height: 2.75rem;
+  width: auto;
 
   filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `
 
 export const Input = styled.input`
@@ -64,6 +102,10 @@ export const Input = styled.input`
     line-height: 1rem;
     color: ${(props) => props.theme['light-purple']};
   }
+  &:focus {
+    margin-right: 2.2px;
+    border-radius: 4px 4px 4px 4px;
+  }
 `
 export const Button = styled.button`
   height: auto;
@@ -75,6 +117,11 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
+  &:focus {
+    border-radius: 4px 4px 4px 4px;
+  }
 `
 
 export const MainContainer = styled.main`
@@ -85,6 +132,10 @@ export const MainContainer = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1092px) {
+    flex-direction: column;
+  }
 `
 
 export const Title = styled.h1`
@@ -92,6 +143,13 @@ export const Title = styled.h1`
   line-height: 3.375rem;
   margin-bottom: 1rem;
   color: ${(props) => props.theme['button-bg']};
+  @media ${device.laptop} {
+    font-size: 2.5rem;
+  }
+  @media ${device.mobile} {
+    font-size: 2rem;
+    text-align: left;
+  }
 `
 
 export const BaseText = styled.p`
@@ -99,6 +157,13 @@ export const BaseText = styled.p`
   font-weight: 400;
 
   line-height: 1.6875rem;
+  @media ${device.laptop} {
+    font-size: 1rem;
+  }
+
+  @media ${device.mobile} {
+    font-size: 0.9rem;
+  }
 `
 
 export const DescriptionText = styled(BaseText)`
@@ -115,13 +180,17 @@ export const SeeMoreText = styled(BaseText)`
 `
 
 export const ImageContainer = styled.div`
-  width: 35.625rem;
-  height: 21.625rem;
+  max-width: 35.625rem;
+  max-height: auto;
 
   > img {
     width: auto;
     height: auto;
     filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
-    /* background: rgba(0, 0, 0, 0.2); */
+
+    @media ${device.mobile} {
+      width: 100%;
+      height: auto;
+    }
   }
 `

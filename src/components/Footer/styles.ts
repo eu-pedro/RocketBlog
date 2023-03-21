@@ -21,17 +21,61 @@ export const ContainerLogos = styled.div`
 
 export const ContainerInfoTop = styled.div`
   display: flex;
-  gap: 1.2rem;
+  gap: 0.8rem;
   font-size: 0.875rem;
-
   margin-bottom: 0.2rem;
+
+  cursor: pointer;
+  > p {
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+
+    position: relative;
+    &::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background-color: ${(props) => props.theme['light-purple']};
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.2s ease-in;
+    }
+
+    &:hover::after {
+      width: 102%;
+    }
+  }
 `
 export const ContainerInfoBottom = styled.div`
   display: flex;
-  gap: 1.4rem;
+  gap: 0.8rem;
   font-size: 0.875rem;
   margin-bottom: 0.4rem;
+
+  cursor: pointer;
+  > p {
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+
+    position: relative;
+    &::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background-color: ${(props) => props.theme['light-purple']};
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.2s ease-in;
+    }
+
+    &:hover::after {
+      width: 102%;
+    }
+  }
 `
 export const EndText = styled.span`
   font-size: 0.8rem;
+  cursor: pointer;
 `
