@@ -1,14 +1,14 @@
 import { MagnifyingGlass, ArrowRight, List } from 'phosphor-react'
 import FeaturedImage from '../../images/featured-image.png'
 import * as Styles from './styles'
-import Logo from '../../assets/Logo.svg'
+// import Logo from '../../assets/Logo.svg'
 import { DefaultTheme } from '../../styles/theme/default'
 
 export function Header({ setMenuIsVisible }: any) {
   return (
     <Styles.Container>
       <Styles.Header>
-        <img src={Logo} alt="" />
+        {/* <img src={Logo} alt="" /> */}
         <Styles.ListContainer>
           <li>Home</li>
           <li>Sobre</li>
