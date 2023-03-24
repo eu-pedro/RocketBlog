@@ -6,19 +6,22 @@ interface ContainerProps {
 
 export const Container = styled.section<ContainerProps>`
   position: absolute;
-  backdrop-filter: blur(2px);
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 999;
+  z-index: 5;
+  backdrop-filter: blur(2px);
+
+  transform: translateY(50px);
+  opacity: 0;
+  pointer-events: none;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
   color: ${(props) => props.theme['light-purple']};
 
   background-color: rgba(17, 18, 17, 0.95);
@@ -28,18 +31,11 @@ export const Container = styled.section<ContainerProps>`
     rgba(17, 18, 17, 0.95)
   );
 
-  opacity: 0;
-
-  ${({ isVisible }) =>
-    isVisible &&
-    css`
-      opacity: 1;
-      pointer-events: auto;
-    `}
+  transition: 0.5s;
 
   > svg {
     position: absolute;
-    top: 1rem;
+    top: 4rem;
     right: 1rem;
   }
   nav {
@@ -49,8 +45,22 @@ export const Container = styled.section<ContainerProps>`
     flex-direction: column;
     gap: 2rem;
 
+    transform: scale(0);
+    transition: 0.7s;
     > li {
       list-style: none;
     }
   }
+  ${({ isVisible }) =>
+    isVisible &&
+    css`
+      opacity: 1;
+      pointer-events: auto;
+
+      transform: translateY(0);
+
+      nav {
+        transform: scale(1);
+      }
+    `}
 `

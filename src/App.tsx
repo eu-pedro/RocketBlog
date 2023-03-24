@@ -9,14 +9,9 @@ import { GlobalStyle } from './styles/global'
 import { DefaultTheme } from './styles/theme/default'
 
 export function App() {
-  // const [menuIsVisible, setMenuIsVisible] = useState<boolean>(false)
   return (
     <ThemeProvider theme={DefaultTheme}>
-      {/* <MenuMobile
-        menuIsVisible={menuIsVisible}
-        setMenuIsVisible={setMenuIsVisible}
-      /> */}
-      <Header /* setMenuIsVisible={setMenuIsVisible} */ />
+      <Header />
       <Content />
       <Cards />
       <Footer />
