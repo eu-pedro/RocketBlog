@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { MagnifyingGlass, ArrowRight, List } from 'phosphor-react'
 import FeaturedImage from '../../images/featured-image.png'
 import * as Styles from './styles'
-import Logo from '../../assets/Logo.svg'
+import LogoHeader from '../../assets/Logo.svg'
 import { DefaultTheme } from '../../styles/theme/default'
 import { MenuMobile } from '../MenuMobile'
 
@@ -16,7 +16,7 @@ export function Header() {
         setMenuIsVisible={setMenuIsVisible}
       />
       <Styles.Header>
-        <img src={Logo} alt="" />
+        <img src={LogoHeader} alt="" />
         <Styles.ListContainer>
           <li>Home</li>
           <li>Sobre</li>
