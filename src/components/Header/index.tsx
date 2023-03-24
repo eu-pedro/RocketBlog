@@ -2,13 +2,13 @@ import { useState } from 'react'
 import { MagnifyingGlass, ArrowRight, List } from 'phosphor-react'
 import FeaturedImage from '../../images/featured-image.png'
 import * as Styles from './styles'
-import LogoHeader from '../../assets/Logo.svg'
+import LogoHeader from '../../assets/LogoHeader.svg'
 import { DefaultTheme } from '../../styles/theme/default'
 import { MenuMobile } from '../MenuMobile'
 
 export function Header() {
   const [menuIsVisible, setMenuIsVisible] = useState<boolean>(false)
-
+  console.log(LogoHeader)
   return (
     <Styles.Container>
       <MenuMobile
