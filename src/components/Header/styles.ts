@@ -6,6 +6,7 @@ export const Container = styled.section`
   flex-direction: column;
   gap: 4rem;
   border-bottom: 3px solid ${(props) => props.theme.green};
+  padding: 0 0 1.8rem 0;
 
   min-height: auto;
   background-color: ${(props) => props.theme['purple-bg']};
