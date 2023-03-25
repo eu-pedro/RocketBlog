@@ -6,7 +6,7 @@ interface ContainerProps {
 
 export const Container = styled.section<ContainerProps>`
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
